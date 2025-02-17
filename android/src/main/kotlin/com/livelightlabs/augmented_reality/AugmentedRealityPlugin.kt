@@ -39,21 +39,4 @@ class AugmentedRealityPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
-
-  override fun onDetachedFromActivity() {
-    channel.setMethodCallHandler(null)
-  }
-
-  override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    onAttachedToActivity(binding)
-  }
-
-  override fun onAttachedToActivity(binding: ActivityPluginBinding) {
-    this.flutterPluginBinding.platformViewRegistry.registerViewFactory(
-      "augmented_reality", AndroidARViewFactory(binding.activity, flutterPluginBinding.binaryMessenger))
-  }
-
-  override fun onDetachedFromActivityForConfigChanges() {
-    onDetachedFromActivity()
-  }
 }
