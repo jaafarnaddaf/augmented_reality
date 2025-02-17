@@ -26,8 +26,8 @@ apply plugin: "kotlin-android"
 
 android {
     namespace = "com.livelightlabs.augmented_reality"
-
     compileSdk = 35
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
